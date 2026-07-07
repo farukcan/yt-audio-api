@@ -14,6 +14,8 @@ from pathlib import Path
 ROOT_DIRECTORY = Path(__file__).resolve().parent
 DOWNLOADS_DIRECTORY = 'downloads'
 ABS_DOWNLOADS_PATH = str(ROOT_DIRECTORY / DOWNLOADS_DIRECTORY)
+SEPARATED_DIRECTORY = 'separated'
+ABS_SEPARATED_PATH = str(ROOT_DIRECTORY / SEPARATED_DIRECTORY)
 
 # --- HTTP Response Codes ---
 REQUEST_TIMEOUT = 408       # Used when token is expired
@@ -25,3 +27,9 @@ INTERNAL_SERVER_ERROR = 500 # Fallback for unexpected server errors
 # --- Token Settings ---
 EXPIRY_TIME_MINUTES = 5     # Token expiration duration in minutes
 TOKEN_LENGTH = 20           # Length of generated token (in characters)
+
+# --- Transcription Settings ---
+WHISPER_MODEL = 'mlx-community/whisper-large-v3-mlx'  # mlx-whisper model repo
+DEMUCS_MODEL = 'htdemucs'                             # Demucs separation model
+DEFAULT_LANGUAGE = 'tr'                               # Default transcription language
+DEMUCS_TIMEOUT_SECONDS = 1800                         # Max wall time for vocal separation
